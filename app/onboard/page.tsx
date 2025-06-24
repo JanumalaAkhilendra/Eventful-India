@@ -101,7 +101,7 @@ export default function OnboardPage() {
     }
   };
 
-  const progress = (currentStep / totalSteps) * 100;
+  const progress = Math.min(100, Math.max(0, (currentStep / totalSteps) * 100));
 
   // Success state
   if (isSuccess) {
@@ -124,7 +124,7 @@ export default function OnboardPage() {
                 </motion.div>
                 <h1 className="text-3xl font-bold mb-4 text-green-600">Application Submitted!</h1>
                 <p className="text-muted-foreground text-lg mb-6">
-                  Thank you for joining ArtistHub. We'll review your application within 24 hours and get back to you.
+                  Thank you for joining ArtistHub. We&apos;ll  review your application within 24 hours and get back to you.
                 </p>
                 <div className="text-sm text-muted-foreground">
                   Redirecting to homepage in a few seconds...
