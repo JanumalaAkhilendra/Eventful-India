@@ -15,7 +15,7 @@ interface CategoryCardProps {
 
 export default function CategoryCard({ id, name, description, icon, count, index = 0 }: CategoryCardProps) {
   return (
-    <motion
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
@@ -25,12 +25,12 @@ export default function CategoryCard({ id, name, description, icon, count, index
         <Card className="group cursor-pointer transition-all duration-300 hover:shadow-lg border-2 hover:border-blue-200 dark:hover:border-blue-800 h-full">
           <CardContent className="p-6">
             <div className="flex items-start justify-between mb-4">
-              <motion
+              <motion.div
                 whileHover={{ scale: 1.1 }}
                 className="text-4xl mb-2"
               >
                 {icon}
-              </motion>
+              </motion.div>
               <Badge variant="secondary" className="text-xs">
                 {count} artists
               </Badge>
@@ -44,16 +44,16 @@ export default function CategoryCard({ id, name, description, icon, count, index
               {description}
             </p>
             
-            <motion
+            <motion.div
               className="flex items-center text-blue-600 text-sm font-medium"
               whileHover={{ x: 5 }}
             >
               Explore {name}
               <ArrowRight className="ml-1 h-4 w-4" />
-            </motion>
+            </motion.div>
           </CardContent>
         </Card>
       </Link>
-    </motion>
+    </motion.div>
   );
 }

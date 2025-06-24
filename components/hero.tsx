@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-slate-900/[0.04] dark:bg-grid-slate-100/[0.04] bg-[size:40px_40px]" />
       <div className="relative container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center">
-          <motion 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -19,9 +19,9 @@ export default function Hero() {
               <Star className="mr-2 h-4 w-4" />
               Trusted by 10,000+ event organizers
             </div>
-          </motion>
+          </motion.div>
           
-          <motion
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -32,9 +32,9 @@ export default function Hero() {
               {' '}Artists{' '}
             </span>
             for Your Events
-          </motion>
+          </motion.div>
           
-          <motion
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -42,9 +42,9 @@ export default function Hero() {
           >
             Connect with talented performers, speakers, and entertainers. 
             From intimate gatherings to grand celebrations, find the perfect artist for your event.
-          </motion>
+          </motion.div>
           
-          <motion
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -61,10 +61,10 @@ export default function Hero() {
                 Join as Artist
               </Button>
             </Link>
-          </motion>
+          </motion.div>
 
           {/* Stats */}
-          <motion
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -75,7 +75,7 @@ export default function Hero() {
               { icon: Award, value: '50,000+', label: 'Events Booked', color: 'text-purple-600' },
               { icon: Star, value: '4.9/5', label: 'Average Rating', color: 'text-green-600' }
             ].map((stat, index) => (
-              <motion
+              <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -83,13 +83,13 @@ export default function Hero() {
                 className="flex flex-col items-center"
               >
                 <div className={`flex items-center justify-center w-12 h-12 rounded-full bg-${stat.color.split('-')[1]}-100 dark:bg-${stat.color.split('-')[1]}-900/20 mb-3`}>
-                  <stat />  <icon className={`h-6 w-6 ${stat.color}`}/> 
+                  <stat.icon className={`h-6 w-6 ${stat.color}`} />
                 </div>
                 <div className={`text-2xl font-bold ${stat.color}`}>{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </motion>
+              </motion.div>
             ))}
-          </motion>
+          </motion.div>
         </div>
       </div>
     </section>
